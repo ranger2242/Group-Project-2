@@ -1,0 +1,5 @@
+﻿  MyForm.cpp
+c:\users\range\google drive\c++\group project 2\project1\MyForm.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  MyForm.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+  Project1.vcxproj -> C:\Users\range\Google Drive\C++\Group Project 2\Project1\Debug\Project1.exe
+  Project1.vcxproj -> C:\Users\range\Google Drive\C++\Group Project 2\Project1\Debug\Project1.pdb (Partial PDB)
