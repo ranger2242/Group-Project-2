@@ -499,7 +499,8 @@ private: System::Void btn_DEMO(System::Object^  sender, System::EventArgs^  e) {
 	sendCommand("137 255 56 128 0 156 1 144");	//reverse
 
 	appendOut("Right turn of 350 degrees", true);
-	sendCommand("137 1 44 255 255 157 0 350");	//right turn of 350
+	sendCommand("137 1 44 255 255 157 0 175");	//right turn of 350
+	sendCommand("137 1 44 255 255 157 0 175");
 	appendOut("Forward", true);
 	sendCommand("137 1 44 128 0 156 1 144");	//forward 1 foot
 	appendOut("Changing direction", true);
