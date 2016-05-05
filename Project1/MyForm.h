@@ -61,6 +61,10 @@ namespace Project1 {
 	private: System::IO::Ports::SerialPort^  port;
 	private: System::Windows::Forms::Panel^  panel1;
 	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::MenuStrip^  menuStrip1;
+	private: System::Windows::Forms::ToolStripMenuItem^  toolStripMenuItem1;
+	private: System::Windows::Forms::ToolStripMenuItem^  aboutToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  exitToolStripMenuItem;
 
 	private: System::ComponentModel::IContainer^  components;
 
@@ -97,6 +101,11 @@ namespace Project1 {
 			this->port = (gcnew System::IO::Ports::SerialPort(this->components));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->toolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// btnFwd
@@ -199,9 +208,9 @@ namespace Project1 {
 			// output
 			// 
 			this->output->BackColor = System::Drawing::Color::Silver;
-			this->output->Location = System::Drawing::Point(13, 13);
+			this->output->Location = System::Drawing::Point(12, 40);
 			this->output->Name = L"output";
-			this->output->Size = System::Drawing::Size(227, 267);
+			this->output->Size = System::Drawing::Size(227, 253);
 			this->output->TabIndex = 0;
 			this->output->Text = L"";
 			this->output->TextChanged += gcnew System::EventHandler(this, &MyForm::output_TextChanged);
@@ -210,10 +219,11 @@ namespace Project1 {
 			// 
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
 			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->panel1->Location = System::Drawing::Point(267, 27);
+			this->panel1->Location = System::Drawing::Point(267, 40);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(200, 93);
 			this->panel1->TabIndex = 9;
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::panel1_Paint);
 			// 
 			// button1
 			// 
@@ -228,12 +238,46 @@ namespace Project1 {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::btn_DEMO);
 			// 
+			// menuStrip1
+			// 
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripMenuItem1 });
+			this->menuStrip1->Location = System::Drawing::Point(0, 0);
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->Size = System::Drawing::Size(479, 24);
+			this->menuStrip1->TabIndex = 11;
+			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// toolStripMenuItem1
+			// 
+			this->toolStripMenuItem1->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->aboutToolStripMenuItem,
+					this->exitToolStripMenuItem
+			});
+			this->toolStripMenuItem1->Name = L"toolStripMenuItem1";
+			this->toolStripMenuItem1->Size = System::Drawing::Size(37, 20);
+			this->toolStripMenuItem1->Text = L"File";
+			this->toolStripMenuItem1->Click += gcnew System::EventHandler(this, &MyForm::toolStripMenuItem1_Click);
+			// 
+			// aboutToolStripMenuItem
+			// 
+			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->aboutToolStripMenuItem->Text = L"About";
+			this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::aboutToolStripMenuItem_Click);
+			// 
+			// exitToolStripMenuItem
+			// 
+			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->exitToolStripMenuItem->Text = L"Exit";
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::exitToolStripMenuItem_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::WindowFrame;
-			this->ClientSize = System::Drawing::Size(479, 292);
+			this->ClientSize = System::Drawing::Size(479, 307);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->btnExit);
@@ -245,10 +289,15 @@ namespace Project1 {
 			this->Controls->Add(this->btnTLeft);
 			this->Controls->Add(this->btnFwd);
 			this->Controls->Add(this->output);
+			this->Controls->Add(this->menuStrip1);
+			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -292,7 +341,7 @@ private: System::Void btnSRight_Click(System::Object^  sender, System::EventArgs
 private: System::Void btnExit_Click(System::Object^  sender, System::EventArgs^  e) {
 	appendOut("-Ending Communication", true);
 	appendOut("-Exiting", true);
-	MessageBox::Show("prnid","Aww, errors", MessageBoxButtons::OKCancel, MessageBoxIcon::Warning);
+	MessageBox::Show("Are you sure you want to exit?","EXIT", MessageBoxButtons::OKCancel, MessageBoxIcon::Warning);
 }
 
 private: System::Void sendCommand(String ^ s) {
@@ -441,6 +490,19 @@ private: System::Void btn_DEMO(System::Object^  sender, System::EventArgs^  e) {
 	sendCommand("137 1 44 255 255 157 0 180");	//change direction
 	appendOut("Forward", true);
 	sendCommand("137 1 44 128 0 156 1 144");	//forward 1 foot
+
+}
+private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+
+}
+private: System::Void toolStripMenuItem1_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void aboutToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	MessageBox::Show("TEAM AWESOME 2016 \nChris Cavazos\nJacob Gibson", "Exception", MessageBoxButtons::OK, MessageBoxIcon::Asterisk);
+
+}
+private: System::Void exitToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	MessageBox::Show("Are you sure you want to exit?", "EXIT", MessageBoxButtons::OKCancel, MessageBoxIcon::Warning);
 
 }
 };
