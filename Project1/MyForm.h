@@ -226,7 +226,7 @@ namespace Project1 {
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"DEMO";
 			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::btn_DEMO);
 			// 
 			// MyForm
 			// 
@@ -288,8 +288,6 @@ private: System::Void btnSRight_Click(System::Object^  sender, System::EventArgs
 	sendCommand("137 1 44 255 255 157 0 90");
 
 }
-
-//Script: sendCommand( 152 BYTES_NUMBER );
 
 private: System::Void btnExit_Click(System::Object^  sender, System::EventArgs^  e) {
 	appendOut("-Ending Communication", true);
@@ -359,7 +357,91 @@ private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e
 	appendOut("Setting to Safe Mode...", true);
 
 }
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+private: System::Void btn_DEMO(System::Object^  sender, System::EventArgs^  e) {
+	appendOut("Executing Script...", true);
+	appendOut("Forward", true);					//Square one
+	sendCommand("137 1 44 128 0 156 1 144");	//forward 1 foot
+	appendOut("Spinning right", true);
+	sendCommand("137 1 44 255 255 157 0 90");	//spin right
+	appendOut("Forward", true);
+	sendCommand("137 1 44 128 0 156 1 144");	//forward 1 foot
+	appendOut("Spinning right", true);
+	sendCommand("137 1 44 255 255 157 0 90");	//spin right
+	appendOut("Spinning left 3 times", true);
+	sendCommand("137 1 44 0 1 157 0 1080");	//spin left 3 times
+	appendOut("Forward", true);
+	sendCommand("137 1 44 128 0 156 1 144");	//forward 1 foot
+	appendOut("Spinning right", true);
+	sendCommand("137 1 44 255 255 157 0 90");	//spin right
+	appendOut("Forward", true);
+	sendCommand("137 1 44 128 0 156 1 144");	//forward 1 foot
+	appendOut("Spinning right", true);
+	sendCommand("137 1 44 255 255 157 0 90");	//spin right
+	
+	appendOut("Forward", true);	
+	sendCommand("137 1 44 128 0 156 1 144");	//forward 1 foot
+
+	appendOut("Spinning right 3 times", true);
+	sendCommand("137 1 44 255 255 157 0 1080");	//spin right 3 times
+
+	appendOut("Stoping", true);	//stop
+	sendCommand("137 0 0 0 0");
+
+	appendOut("Reverse", true);			//Square two
+	sendCommand("137 255 56 128 0 156 1 144");	//reverse
+	appendOut("Spinning left", true);
+	sendCommand("137 1 44 0 1 157 0 90");	//spin left
+	appendOut("Reverse", true);		
+	sendCommand("137 255 56 128 0 156 1 144");	//reverse
+	appendOut("Spinning left", true);
+	sendCommand("137 1 44 0 1 157 0 90");	//spin left
+	appendOut("Spinning left 3 times", true);
+	sendCommand("137 1 44 0 1 157 0 1080");	//spin left 3 times
+	appendOut("Reverse", true);			
+	sendCommand("137 255 56 128 0 156 1 144");	//reverse
+	appendOut("Spinning left", true);
+	sendCommand("137 1 44 0 1 157 0 90");	//spin left
+	appendOut("Reverse", true);			
+	sendCommand("137 255 56 128 0 156 1 144");	//reverse
+	appendOut("Spinning left", true);
+	sendCommand("137 1 44 0 1 157 0 90");	//spin left
+
+	appendOut("Reverse", true);
+	sendCommand("137 255 56 128 0 156 1 144");	//reverse
+
+	appendOut("Spinning right 3 times", true);
+	sendCommand("137 1 44 255 255 157 0 1080");	//spin right 3 times
+
+	appendOut("Spinning left 3 times", true);
+	sendCommand("137 1 44 0 1 157 0 1080");	//spin left 3 times
+
+	appendOut("Right turn of 10 degrees", true);
+	sendCommand("137 1 44 255 255 157 0 10");	//right turn of 10
+	appendOut("Forward", true);
+	sendCommand("137 1 44 128 0 156 1 144");	//forward 1 foot
+	appendOut("Changing direction", true);
+	sendCommand("137 1 44 255 255 157 0 180");	//change direction
+	appendOut("Reverse", true);
+	sendCommand("137 255 56 128 0 156 1 144");	//reverse
+
+	appendOut("Right turn of 350 degrees", true);
+	sendCommand("137 1 44 255 255 157 0 350");	//right turn of 350
+	appendOut("Forward", true);
+	sendCommand("137 1 44 128 0 156 1 144");	//forward 1 foot
+	appendOut("Changing direction", true);
+	sendCommand("137 1 44 255 255 157 0 180");	//change direction
+	appendOut("Reverse", true);
+	sendCommand("137 255 56 128 0 156 1 144");	//reverse
+	
+	appendOut("Changing direction", true);
+	sendCommand("137 1 44 255 255 157 0 180");	//change direction
+	appendOut("Forward", true);
+	sendCommand("137 1 44 128 0 156 1 144");	//forward 1 foot
+	appendOut("Changing direction", true);
+	sendCommand("137 1 44 255 255 157 0 180");	//change direction
+	appendOut("Forward", true);
+	sendCommand("137 1 44 128 0 156 1 144");	//forward 1 foot
+
 }
 };
 }
