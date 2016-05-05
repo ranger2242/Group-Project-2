@@ -60,6 +60,7 @@ namespace Project1 {
 	private: System::Windows::Forms::RichTextBox^  output;
 	private: System::IO::Ports::SerialPort^  port;
 	private: System::Windows::Forms::Panel^  panel1;
+	private: System::Windows::Forms::Button^  button1;
 
 	private: System::ComponentModel::IContainer^  components;
 
@@ -95,15 +96,16 @@ namespace Project1 {
 			this->output = (gcnew System::Windows::Forms::RichTextBox());
 			this->port = (gcnew System::IO::Ports::SerialPort(this->components));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// btnFwd
 			// 
 			this->btnFwd->BackColor = System::Drawing::Color::LimeGreen;
-			this->btnFwd->Location = System::Drawing::Point(433, 174);
-			this->btnFwd->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnFwd->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnFwd->Location = System::Drawing::Point(325, 141);
 			this->btnFwd->Name = L"btnFwd";
-			this->btnFwd->Size = System::Drawing::Size(100, 28);
+			this->btnFwd->Size = System::Drawing::Size(75, 23);
 			this->btnFwd->TabIndex = 1;
 			this->btnFwd->Text = L"Forward";
 			this->btnFwd->UseVisualStyleBackColor = false;
@@ -112,10 +114,10 @@ namespace Project1 {
 			// btnTLeft
 			// 
 			this->btnTLeft->BackColor = System::Drawing::Color::Goldenrod;
-			this->btnTLeft->Location = System::Drawing::Point(364, 209);
-			this->btnTLeft->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnTLeft->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnTLeft->Location = System::Drawing::Point(273, 170);
 			this->btnTLeft->Name = L"btnTLeft";
-			this->btnTLeft->Size = System::Drawing::Size(85, 28);
+			this->btnTLeft->Size = System::Drawing::Size(64, 23);
 			this->btnTLeft->TabIndex = 2;
 			this->btnTLeft->Text = L"Left Turn";
 			this->btnTLeft->UseVisualStyleBackColor = false;
@@ -124,10 +126,10 @@ namespace Project1 {
 			// btnTRight
 			// 
 			this->btnTRight->BackColor = System::Drawing::Color::Goldenrod;
-			this->btnTRight->Location = System::Drawing::Point(516, 209);
-			this->btnTRight->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnTRight->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnTRight->Location = System::Drawing::Point(387, 170);
 			this->btnTRight->Name = L"btnTRight";
-			this->btnTRight->Size = System::Drawing::Size(89, 28);
+			this->btnTRight->Size = System::Drawing::Size(67, 23);
 			this->btnTRight->TabIndex = 3;
 			this->btnTRight->Text = L"Right Turn";
 			this->btnTRight->UseVisualStyleBackColor = false;
@@ -136,10 +138,10 @@ namespace Project1 {
 			// btnRev
 			// 
 			this->btnRev->BackColor = System::Drawing::SystemColors::MenuHighlight;
-			this->btnRev->Location = System::Drawing::Point(433, 245);
-			this->btnRev->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnRev->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnRev->Location = System::Drawing::Point(325, 199);
 			this->btnRev->Name = L"btnRev";
-			this->btnRev->Size = System::Drawing::Size(100, 28);
+			this->btnRev->Size = System::Drawing::Size(75, 23);
 			this->btnRev->TabIndex = 4;
 			this->btnRev->Text = L"Reverse";
 			this->btnRev->UseVisualStyleBackColor = false;
@@ -148,11 +150,11 @@ namespace Project1 {
 			// btnStop
 			// 
 			this->btnStop->BackColor = System::Drawing::Color::Red;
+			this->btnStop->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnStop->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->btnStop->Location = System::Drawing::Point(457, 209);
-			this->btnStop->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnStop->Location = System::Drawing::Point(343, 170);
 			this->btnStop->Name = L"btnStop";
-			this->btnStop->Size = System::Drawing::Size(51, 28);
+			this->btnStop->Size = System::Drawing::Size(38, 23);
 			this->btnStop->TabIndex = 5;
 			this->btnStop->Text = L"Stop";
 			this->btnStop->UseVisualStyleBackColor = false;
@@ -160,44 +162,46 @@ namespace Project1 {
 			// 
 			// btnSLeft
 			// 
-			this->btnSLeft->Location = System::Drawing::Point(364, 281);
-			this->btnSLeft->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnSLeft->BackColor = System::Drawing::Color::DarkCyan;
+			this->btnSLeft->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnSLeft->Location = System::Drawing::Point(255, 228);
 			this->btnSLeft->Name = L"btnSLeft";
-			this->btnSLeft->Size = System::Drawing::Size(85, 28);
+			this->btnSLeft->Size = System::Drawing::Size(75, 23);
 			this->btnSLeft->TabIndex = 6;
 			this->btnSLeft->Text = L"Spin Left";
-			this->btnSLeft->UseVisualStyleBackColor = true;
+			this->btnSLeft->UseVisualStyleBackColor = false;
 			this->btnSLeft->Click += gcnew System::EventHandler(this, &MyForm::btnSLeft_Click);
 			// 
 			// btnSRight
 			// 
-			this->btnSRight->Location = System::Drawing::Point(516, 281);
-			this->btnSRight->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnSRight->BackColor = System::Drawing::Color::DarkCyan;
+			this->btnSRight->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnSRight->Location = System::Drawing::Point(398, 228);
 			this->btnSRight->Name = L"btnSRight";
-			this->btnSRight->Size = System::Drawing::Size(89, 28);
+			this->btnSRight->Size = System::Drawing::Size(75, 23);
 			this->btnSRight->TabIndex = 7;
 			this->btnSRight->Text = L"Spin Right";
-			this->btnSRight->UseVisualStyleBackColor = true;
+			this->btnSRight->UseVisualStyleBackColor = false;
 			this->btnSRight->Click += gcnew System::EventHandler(this, &MyForm::btnSRight_Click);
 			// 
 			// btnExit
 			// 
-			this->btnExit->Location = System::Drawing::Point(433, 316);
-			this->btnExit->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnExit->BackColor = System::Drawing::Color::Gray;
+			this->btnExit->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnExit->Location = System::Drawing::Point(255, 257);
 			this->btnExit->Name = L"btnExit";
-			this->btnExit->Size = System::Drawing::Size(100, 28);
+			this->btnExit->Size = System::Drawing::Size(75, 23);
 			this->btnExit->TabIndex = 8;
 			this->btnExit->Text = L"Exit";
-			this->btnExit->UseVisualStyleBackColor = true;
+			this->btnExit->UseVisualStyleBackColor = false;
 			this->btnExit->Click += gcnew System::EventHandler(this, &MyForm::btnExit_Click);
 			// 
 			// output
 			// 
 			this->output->BackColor = System::Drawing::Color::Silver;
-			this->output->Location = System::Drawing::Point(17, 16);
-			this->output->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->output->Location = System::Drawing::Point(13, 13);
 			this->output->Name = L"output";
-			this->output->Size = System::Drawing::Size(301, 328);
+			this->output->Size = System::Drawing::Size(227, 267);
 			this->output->TabIndex = 0;
 			this->output->Text = L"";
 			this->output->TextChanged += gcnew System::EventHandler(this, &MyForm::output_TextChanged);
@@ -206,18 +210,31 @@ namespace Project1 {
 			// 
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
 			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->panel1->Location = System::Drawing::Point(356, 33);
-			this->panel1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->panel1->Location = System::Drawing::Point(267, 27);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(267, 114);
+			this->panel1->Size = System::Drawing::Size(200, 93);
 			this->panel1->TabIndex = 9;
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::MediumBlue;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button1->ForeColor = System::Drawing::Color::White;
+			this->button1->Location = System::Drawing::Point(398, 257);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 10;
+			this->button1->Text = L"DEMO";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::WindowFrame;
-			this->ClientSize = System::Drawing::Size(639, 359);
+			this->ClientSize = System::Drawing::Size(479, 292);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->btnExit);
 			this->Controls->Add(this->btnSRight);
@@ -228,7 +245,6 @@ namespace Project1 {
 			this->Controls->Add(this->btnTLeft);
 			this->Controls->Add(this->btnFwd);
 			this->Controls->Add(this->output);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
@@ -342,6 +358,8 @@ private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e
 	sendCommand("131"); //Sets robot to safe mode
 	appendOut("Setting to Safe Mode...", true);
 
+}
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
