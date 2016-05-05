@@ -417,9 +417,12 @@ private: System::Void btn_DEMO(System::Object^  sender, System::EventArgs^  e) {
 	appendOut("Spinning right", true);
 	sendCommand("137 1 44 255 255 157 0 90");	//spin right
 	appendOut("Spinning left 3 times", true);	//spin left 3 times
-	sendCommand("137 1 44 0 1 157 0 360");
-	sendCommand("137 1 44 0 1 157 0 360");
-	sendCommand("137 1 44 0 1 157 0 360");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
 	appendOut("Forward", true);
 	sendCommand("137 1 44 128 0 156 1 144");	//forward 1 foot
 	appendOut("Spinning right", true);
@@ -433,9 +436,12 @@ private: System::Void btn_DEMO(System::Object^  sender, System::EventArgs^  e) {
 	sendCommand("137 1 44 128 0 156 1 144");	//forward 1 foot
 
 	appendOut("Spinning right 3 times", true);	//spin right 3 times
-	sendCommand("137 1 44 255 255 157 0 360");
-	sendCommand("137 1 44 255 255 157 0 360");
-	sendCommand("137 1 44 255 255 157 0 360");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
 
 	appendOut("Stoping", true);	//stop
 	sendCommand("137 0 0 0 0");
@@ -449,9 +455,12 @@ private: System::Void btn_DEMO(System::Object^  sender, System::EventArgs^  e) {
 	appendOut("Spinning left", true);
 	sendCommand("137 1 44 0 1 157 0 90");	//spin left
 	appendOut("Spinning left 3 times", true);	//spin left 3 times
-	sendCommand("137 1 44 0 1 157 0 360");
-	sendCommand("137 1 44 0 1 157 0 360");
-	sendCommand("137 1 44 0 1 157 0 360");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
 	appendOut("Reverse", true);			
 	sendCommand("137 255 56 128 0 156 1 144");	//reverse
 	appendOut("Spinning left", true);
@@ -465,14 +474,20 @@ private: System::Void btn_DEMO(System::Object^  sender, System::EventArgs^  e) {
 	sendCommand("137 255 56 128 0 156 1 144");	//reverse
 
 	appendOut("Spinning right 3 times", true);	//spin right 3 times
-	sendCommand("137 1 44 255 255 157 0 360");
-	sendCommand("137 1 44 255 255 157 0 360");
-	sendCommand("137 1 44 255 255 157 0 360");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
 
 	appendOut("Spinning left 3 times", true);	//spin left 3 times
-	sendCommand("137 1 44 0 1 157 0 360");
-	sendCommand("137 1 44 0 1 157 0 360");
-	sendCommand("137 1 44 0 1 157 0 360");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
+	sendCommand("137 1 44 0 1 157 0 180");
 
 	appendOut("Right turn of 10 degrees", true);
 	sendCommand("137 1 44 255 255 157 0 10");	//right turn of 10
